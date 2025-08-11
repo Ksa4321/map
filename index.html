@@ -6,16 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
  <style>
+  :root{
+  --header-h: 60px;  /* 50px للصورة + تقريباً 10px padding */
+  --footer-h: 60px;  /* نفس الشي للفوتر */
+}
+
+html, body { height: 100vh; position: relative; }
+
+/* ضبط للجوال */
+@media (max-width: 600px){
+  :root{
+    --header-h: 50px;
+    --footer-h: 50px;
+  }
+}
+
   body, html {
     margin: 0;
     padding: 0;
     height: 100%;
   }
 
-  #map {
-    width: 100%;
-    height: 100vh;
-  }
+  #map{
+  position: absolute;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: var(--footer-h);
+  height: auto;   /* بدل 100vh */
+  width: 100%;
+}
+
 
   #header-bar {
     position: fixed;
